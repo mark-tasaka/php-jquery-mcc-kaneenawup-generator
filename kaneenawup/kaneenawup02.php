@@ -442,7 +442,7 @@
 	let luckModifier = getLuckModifier(luck);
     let maxTechLevel = getMaxTechLevel(intelligence);
     let bonusLanguages = fnAddLanguages(intelligenceModifier, birthAugur, luckModifier);
-	let baseAC = getBaseArmourClass(agilityModifier)  + adjustAC(birthAugur, getLuckModifier(luck));
+	let baseAC = getBaseArmourClass(agilityModifier, birthAugur, luckModifier);
     let sentinel = getKaneenawup();
 		
 		let sentinelCharacter = {

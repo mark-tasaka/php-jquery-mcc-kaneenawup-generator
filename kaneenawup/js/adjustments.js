@@ -1,25 +1,4 @@
-/*Zahra Character Class*/
-      /*additional languages*/
-/*
-   let fnAddLanguages = function(intelligenceModifier, luckySign, luckModifier) {
-          let bonusLanguages = intelligenceModifier * 2;
-          let additionalLanguages ="";
 
-    if (luckySign.luckySign != undefined && luckySign.luckySign === "The Universal Translator"){
-          bonusLanguages += luckModifier;
-        }
-          if(bonusLanguages < 1){
-            additionalLanguages = "";
-        }
-        else if(bonusLanguages === 1){
-            additionalLanguages = " & " + bonusLanguages + " additional language";
-        }
-        else{
-            additionalLanguages = " & " + bonusLanguages + " additional languages";
-        }
-          return additionalLanguages;
-      }*/
-   
    
       let fnAddLanguages = function(intelligenceModifier, luckySign, luckModifier) 
       {
@@ -99,9 +78,18 @@ function hitPointAdjustPerLevel (luckySign, luckModifier) {
 /*
  getBaseArmourClass(agilityModifier)- returns the base armour class of the character
 */
-function getBaseArmourClass(agilityModifier){
+function getBaseArmourClass(agilityModifier, luckySign, luckModifier){
 	let armourClass = 10;
-	baseArmourClass = armourClass + agilityModifier;
+    let bonus = 0;
+    
+    if(luckySign.luckySign!= undefined && luckySign.luckySign === "The Bunker")
+        {
+            bonus = luckModifier;
+        }
+    
+    
+	baseArmourClass = armourClass + agilityModifier + bonus;
+    
 	return baseArmourClass;
 }	  
 

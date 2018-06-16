@@ -442,7 +442,7 @@
 	let luckModifier = getLuckModifier(luck);
     let maxTechLevel = getMaxTechLevel(intelligence);
     let bonusLanguages = fnAddLanguages(intelligenceModifier, birthAugur, luckModifier);
-	let baseAC = getBaseArmourClass(agilityModifier)  + adjustAC(birthAugur, getLuckModifier(luck));
+	let baseAC = getBaseArmourClass(agilityModifier, birthAugur, luckModifier);
     let sentinel = getKaneenawup();
 		
 		let sentinelCharacter = {
@@ -521,7 +521,7 @@
         },
         
 		{"level": 2,
-		 "title": "Trooper",
+		 "title": "Sentinel, Trooper",
 		 "actionDice": "1d20",
 		 "attackBonus": 2,
 		 "critDie": "1d14",
@@ -535,7 +535,7 @@
         },
         
 		{"level": 3,
-		 "title": "Specialist",
+		 "title": "Sentinel, Specialist",
 		 "actionDice": "1d20",
 		 "attackBonus": 3,
 		 "critDie": "1d16",
@@ -549,7 +549,7 @@
         },
         
 		{"level": 4,
-		 "title": "Commander",
+		 "title": "Sentinel, Commander",
 		 "actionDice": "1d20",
 		 "attackBonus": 4,
 		 "critDie": "1d20",
